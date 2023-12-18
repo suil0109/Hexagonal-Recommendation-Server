@@ -1,0 +1,7 @@
+{
+    "MAX_RECS": 3,
+    "URL": "https://predict-ctr-pmj4td4sjq-du.a.run.app/",
+    "REDIS_HOST": "hostname-redis",
+    "REDIS_PORT": 6379,
+    "REDIS_DB": 0
+}

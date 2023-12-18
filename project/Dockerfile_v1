@@ -1,0 +1,18 @@
+FROM python:3.9
+
+# Configure python
+ENV LANG=C.UTF-8 LC_ALL=C.UTF-8 PYTHONUNBUFFERED=1
+
+ARG REQUIREMENT='requirements.txt'
+
+# get packages
+COPY $REQUIREMENT /tmp/
+RUN pip install --no-cache-dir -r /tmp/$REQUIREMENT
+
+# Assuming your FastAPI code is in the src folder
+# COPY . /app/
+
+WORKDIR /app
+EXPOSE 8080
+
+CMD ["uvicorn", "src.main:app", "--reload", "--host", "localhost", "--port", "8080"]
